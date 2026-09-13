@@ -1,0 +1,372 @@
+/* ===========================================
+   CSS Box Model Demonstration:
+   - Background color: navbar, hero, about, skills, contact
+   - Text color: headings, paragraphs, links
+   - Font styling: Google Font 'Press Start 2P'
+   - Margin: mb-*, mt-* utilities + custom margin
+   - Padding: section padding, card padding
+   - Border: card border, about-list border-left
+   - Border-radius: buttons, cards, nav-links
+   - Width/max-width: container, images, form
+   =========================================== */
+
+
+/* CSS Units Used Meaningfully:
+   - vh: full-height hero section
+   - %: responsive image/container width
+   - rem: consistent font sizing across page
+   - em: proportional padding relative to element font-size
+   - px: fixed spacing and max-width values
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.navbar-brand,
+.nav-link {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.navbar-brand {
+    font-size: 14px;
+}
+
+.nav-link {
+    font-size: 10px;
+    color: #ffffff !important;
+    padding: 10px 16px !important;
+    background-color: #2e2e42;
+    border-radius: 8px;
+    box-shadow: 0 4px 0 #14141f;
+    transition: all 0.1s ease;
+}
+
+.nav-link:hover {
+    background-color: #3a3a55;
+    color: #4fa7b3 !important;
+}
+
+.nav-link:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 #14141f;
+}
+
+.hero {
+    min-height: 100vh;
+    background-color: #1e1e2f;
+    padding: 40px 20px;
+}
+
+.hero img {
+    border: 4px solid #4fa7b3;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+}
+
+.about {
+    background-color: #14141f;
+    padding: 60px 20px;
+}
+
+.about h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #4fa7b3;
+}
+
+.about p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    background-color: #2e2e42;
+    border-left: 4px solid #4fa7b3;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.skills {
+    background-color: #1e1e2f;
+    padding: 60px 20px;
+}
+
+.skills h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #4dd0e1;
+}
+
+.skill-card {
+    background-color: #2e2e42;
+    border: 2px solid #4dd0e1;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.skill-card .card-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 13px;
+    color: #4dd0e1;
+    margin-bottom: 12px;
+}
+
+.skill-card .card-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact {
+    background-color: #14141f;
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #4dd0e1;
+}
+
+.contact .form-label {
+    font-weight: bold;
+}
+
+.contact .form-control {
+    background-color: #2e2e42;
+    color: #ffffff;
+    border: 1px solid #4dd0e1;
+}
+
+.contact .form-control::placeholder {
+    color: #aaaaaa;
+}
+
+.contact .form-control:focus {
+    background-color: #2e2e42;
+    color: #ffffff;
+    border-color: #4dd0e1;
+    box-shadow: 0 0 0 0.2rem rgba(77, 208, 225, 0.3);
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 28px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #4dd0e1;
+    transform: scale(1.2);
+}
+
+.social-icons i {
+    image-rendering: pixelated;
+    filter: contrast(1.2);
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.hero img {
+    width: 180px;
+    max-width: 100%;
+}
+
+.about p {
+    max-width: 700px;
+}
+
+.contact form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#introMessage {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #4dd0e1;
+    min-height: 30px;
+}
+
+#visitorName {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background-color: #2e2e42;
+    color: #ffffff;
+    border: 1px solid #4dd0e1;
+}
+
+#visitorName::placeholder {
+    color: #aaaaaa;
+}
+
+.message-box {
+    background-color: #2e2e42;
+    border: 2px solid #4dd0e1;
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: inline-block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(20, 20, 31, 0.97);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.welcome-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.welcome-box {
+    background-color: #2e2e42;
+    border: 3px solid #4dd0e1;
+    border-radius: 12px;
+    padding: 50px 35px;
+    text-align: center;
+    max-width: 90%;
+    width: 420px;
+    box-shadow: 0 0 40px rgba(77, 208, 225, 0.3);
+    transform: scale(0.85);
+    opacity: 0;
+    animation: popIn 0.6s ease forwards 0.1s;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.welcome-box h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: #4dd0e1;
+    margin-bottom: 20px;
+}
+
+.welcome-box p {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.btn-close-welcome {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #4dd0e1;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-close-welcome:hover {
+    background-color: #3ab8cc;
+    transform: scale(1.05);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.interests {
+    background-color: #14141f;
+    padding: 60px 20px;
+}
+
+.interests h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #4dd0e1;
+}
+
+.music-player {
+    margin-top: 15px;
+}
+
+.music-player audio {
+    width: 100%;
+}
+
+.album-art {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #4dd0e1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.game-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #4dd0e1;
+    transition: transform 0.2s ease;
+}
+
+.game-icon:hover {
+    transform: scale(1.15);
+}
